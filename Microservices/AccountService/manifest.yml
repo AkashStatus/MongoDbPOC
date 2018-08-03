@@ -1,0 +1,4 @@
+applications:
+- host : AcountServer
+  name: AccountService
+  memory: 128M

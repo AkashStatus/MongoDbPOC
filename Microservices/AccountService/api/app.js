@@ -1,5 +1,6 @@
 var express = require('express')
 var app = express();
+var port = (process.env.VCAP_APP_PORT || 8080)
 var bodyParser= require('body-parser')
 app.use(bodyParser.json())
 var mongoose= require('mongoose')
@@ -17,6 +18,6 @@ mongoose.connect(connectionString,{ useNewUrlParser:true },function(err,response
 })   
 
 app.use(require('./routes/register'))
-var listener = app.listen(5000,function(){
+var listener = app.listen(port,function(){
     console.log("Service started at port",listener.address().port)
 })

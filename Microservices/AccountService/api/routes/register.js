@@ -19,7 +19,9 @@ router.post('/register',(req,res)=>{
         }
     })
 })
-
+router.get('/',function(req,res){
+    res.status(200).send("Everything is fine")
+})
 router.get('/register',(req,res)=>{
     console.log(req.query)
     var query ={}
